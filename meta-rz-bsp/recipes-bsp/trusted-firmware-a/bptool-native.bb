@@ -14,7 +14,6 @@ SRC_URI = "${URL};protocol=https;nobranch=1"
 
 PV = "v2.7+git"
 
-S = "${WORKDIR}/git"
 
 do_configure () {
         sed -i '/^LDLIBS/ s,$, \$\{BUILD_LDFLAGS},' ${S}/tools/renesas/rz_boot_param/Makefile

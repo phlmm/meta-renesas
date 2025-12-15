@@ -1,16 +1,18 @@
 FILESEXTRAPATHS:prepend := "${THISDIR}/${PN}:"
-LICENSE = "MIT"
-LIC_FILES_CHKSUM = "file://COPYING.MIT;md5=3da9cfbcb788c80a0384361b4de20420"
 
 SRC_URI:append = " \
     file://audio.sh \
     file://COPYING.MIT \
 "
-S = "${WORKDIR}"
+
+LICENSE = "MIT"
+LIC_FILES_CHKSUM = "file://COPYING.MIT;md5=3da9cfbcb788c80a0384361b4de20420"
+
+S = "${UNPACKDIR}"
 
 do_install() {
     install -d ${D}/${sysconfdir}/profile.d
-    install -m 0755 ${WORKDIR}/audio.sh ${D}/${sysconfdir}/profile.d/audio.sh
+    install -m 0755 ${UNPACKDIR}/audio.sh ${D}/${sysconfdir}/profile.d/audio.sh
 }
 do_configure[noexec] = "1"
 do_patch[noexec] = "1"

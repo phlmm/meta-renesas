@@ -32,12 +32,12 @@ SRC_URI:rzt2h-family = " \
 
 inherit deploy
 
-S:rzg2l-family = "${WORKDIR}/git"
-S:rzg3e-family = "${WORKDIR}"
-S:rzv2h-family = "${WORKDIR}"
-S:rzg3s-family = "${WORKDIR}/${BPN}"
-S:rzt2h-family = "${WORKDIR}"
-PMIC_BUILD_DIR = "${S}/build_pmic"
+S:rzg2l-family = "${UNPACKDIR}/git"
+S:rzg3e-family = "${UNPACKDIR}"
+S:rzv2h-family = "${UNPACKDIR}"
+S:rzg3s-family = "${UNPACKDIR}/${BPN}"
+S:rzt2h-family = "${UNPACKDIR}"
+PMIC_BUILD_DIR = "${UNPACKDIR}/build_pmic"
 
 do_compile:rzg2l-family() {
 	cd ${S}

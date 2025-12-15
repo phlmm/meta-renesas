@@ -14,8 +14,6 @@ SRC_URI = "${URL};protocol=https;nobranch=1"
 
 PV = "v2.10+git"
 
-S = "${WORKDIR}/git"
-
 do_configure[noexec] = "1"
 do_compile[noexec] = "1"
 
